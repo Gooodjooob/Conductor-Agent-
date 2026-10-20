@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conductor｜多 Agent 开发协作控制面</title>
+  <link rel="stylesheet" href="/board.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">Conductor</span><strong>多 Agent 开发协作控制面</strong><span class="source-tag">仅供查看</span></div>
+    <div class="top-actions"><span id="updated">尚未读取</span><button id="refresh" type="button" title="刷新" aria-label="刷新">↻</button></div>
+  </header>
+  <nav class="layer-nav" id="layer-nav" aria-label="五层层级导航">
+    <button type="button" class="layer-link" data-layer="portfolio">总体驾驶舱</button>
+    <button type="button" class="layer-link" data-layer="projects">项目</button>
+    <button type="button" class="layer-link" data-layer="businessLines">业务线</button>
+    <button type="button" class="layer-link" data-layer="tasks">任务</button>
+    <button type="button" class="layer-link" data-layer="workers">成员</button>
+  </nav>
+  <nav class="breadcrumb" id="breadcrumb" aria-label="面包屑"></nav>
+  <p id="layer-note" class="layer-note">规划快照、历史资料、真实执行、执行成员自报和独立审核分开显示；没有证据就写“尚未验证”。</p>
+  <main class="layout">
+    <aside class="rail">
+      <div class="rail-heading"><h2>项目与任务</h2><span id="task-count">0</span></div>
+      <div class="filters">
+        <label for="project-filter">项目</label>
+        <select id="project-filter"></select>
+        <label for="line-filter">业务线</label>
+        <select id="line-filter"></select>
+        <label for="record-filter">记录类型</label>
+        <select id="record-filter">
+          <option value="">全部记录</option>
+          <option value="real_execution">真实执行</option>
+          <option value="historical_archive">历史资料</option>
+        </select>
+        <label for="search-filter">搜索标题</label>
+        <input id="search-filter" type="search" placeholder="输入关键字">
+      </div>
+      <div id="projects" class="projects"></div>
+    </aside>
+    <section class="detail" aria-live="polite">
+      <div id="notice" class="notice">正在读取看板…</div>
+      <div id="portfolio" class="portfolio"></div>
+      <div id="workers" class="workers"></div>
+      <div id="task-detail" class="task-detail"></div>
+    </section>
+    <aside class="review-rail">
+      <h2 id="review-heading">待审核</h2><div id="reviews"></div>
+    </aside>
+  </main>
+  <dialog id="material-dialog"><div class="material-top"><h2 id="material-title">来源材料</h2><button id="material-close" type="button">关闭</button></div><p id="material-source"></p><pre id="material-content"></pre></dialog>
+  <script src="/project-view.js" defer></script>
+  <script src="/board.js" defer></script>
+</body>
+</html>
