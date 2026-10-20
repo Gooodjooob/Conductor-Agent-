@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3002,
-      "sha256": "082aba8e204a738b63b317a1c5939bd31154a0d03ae83b7381bab38cd2d8b604"
+      "bytes": 4245,
+      "sha256": "385a6571471da183f859d0da17904a8b8d6a98000d8efa1047dea9c2797bb207"
     },
     {
       "path": "adapters/__init__.py",
